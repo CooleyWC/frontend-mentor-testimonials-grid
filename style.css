@@ -1,0 +1,302 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  background-color: #F2F2F2F2;
+
+  font-family: "Barlow Semi Condensed", serif;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+
+:root {
+
+    /* colors */
+    --clr-violet-ring: hsl(263, 54%, 73%);
+
+    --clr-med-violet: hsl(263, 55%, 52%);
+    --clr-dark-gray-blue: hsl(217, 19%, 35%);
+    --clr-dark-black-blue: hsl(219, 29%, 14%);
+    --clr-white: hsl(0, 0%, 100%);
+
+    --clr-light-gray: #cfcfcf;
+    --clr-light-gray-blue: #ecf2f8;
+
+    /* typography */
+
+    --fs--3: clamp(0.6875rem, 0.68rem + 0.03vw, 0.6875rem);
+    --fs--2: clamp(0.7813rem, 0.7747rem + 0.0326vw, 0.8rem);
+    --fs--1: clamp(0.9375rem, 0.9158rem + 0.1087vw, 1rem);
+    --fs-0: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+    --fs-1: clamp(1.35rem, 1.2761rem + 0.3696vw, 1.5625rem);
+    --fs-2: clamp(1.62rem, 1.5041rem + 0.5793vw, 1.9531rem);
+    --fs-3: clamp(1.944rem, 1.771rem + 0.8651vw, 2.4414rem);
+    --fs-4: clamp(2.3328rem, 2.0827rem + 1.2504vw, 3.0518rem);
+    --fs-5: clamp(2.7994rem, 2.4462rem + 1.7658vw, 3.8147rem);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 0 auto;
+    max-width: 327px;
+    gap: 1.3em;
+}
+
+/* global card styles */
+
+.card {
+  padding-bottom: 2rem;
+  border-radius: 8px;
+}
+
+.card-heading {
+    margin: 1.2rem 0;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.card-heading img {
+    border-radius: 50%;
+    margin-right: 1rem;
+    width: 30px;
+    height: 30px;
+}
+
+.card-heading-text {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8125rem;
+}
+
+.card-heading-text h2 {
+  font-size: var(--fs--2);
+  font-weight: 500;
+}
+
+.card-heading-text p {
+    font-size: var(--fs--3);
+    opacity: 50%;
+    margin-top: 0;
+}
+
+/* card description */
+
+.card-description {
+  width: 100%;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 10;
+
+}
+
+.card-description h3 {
+  font-size: var(--fs-0);
+  font-weight: 500;
+  margin-bottom: 2em;
+  line-height: 1.4rem
+}
+
+.card-description p {
+  margin-top: 0;
+  font-size: var(--fs--1);
+  opacity: 70%;
+}
+
+.card-description blockquote {
+  padding: 0;
+  margin: 0;
+}
+
+/* daniel styles */
+
+.daniel {
+  background-color: var(--clr-med-violet);
+  color: var(--clr-white);
+  position: relative;
+}
+
+.quote-image-wrapper img {
+  position: absolute;
+  right: 0;
+  z-index: 0;
+
+}
+
+.daniel .card-description p {
+  color: var(--clr-light-gray);
+}
+
+.daniel .card-heading img {
+  border: 2px solid var(--clr-violet-ring)
+}
+
+/* jonathan styles */
+
+.jonathan {
+  background-color: var(--clr-dark-gray-blue);
+  color: var(--clr-white);
+}
+
+/* jeanette styles */
+
+.jeanette {
+  background-color: var(--clr-white);
+  /* color: var(--clr-dark-gray-blue); */
+  box-shadow: 40px 40px 35px -30px var(--clr-light-gray);
+}
+
+.jeanette .card-description p {
+  opacity: 65%;
+}
+
+/* patrick styles */
+
+.patrick {
+  background-color: var(--clr-dark-black-blue);
+  color: var(--clr-light-gray-blue);
+}
+
+.patrick .card-heading img {
+  border: 2px solid var(--clr-med-violet)
+}
+
+/* kira styles */
+
+.kira {
+  background-color: var(--clr-white);
+  box-shadow: 40px 40px 35px -30px var(--clr-light-gray);
+  color: var(--clr-dark-gray-blue)
+}
+
+
+@media screen and (min-width: 900px) {
+
+  .card-heading {
+    margin: 1rem 0;
+  }
+
+  .card-description {
+    width: 100%;
+  }
+
+  .card-description h3 {
+    margin-top: 0;
+    margin-bottom: 1em;
+    font-size: var(--fs-0);
+  }
+
+  .card-description p {
+    font-size: var(--fs--2);
+  }
+
+  .container {
+    display: grid;
+    max-width: 1110px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .quote-image-wrapper img {
+    position: absolute;
+    right: 5rem;
+    z-index: 0;
+  
+  }
+
+  .grid-col-span-2 {
+    grid-column: span 2;
+  }
+
+  .daniel {
+    grid-row: 1;
+  }
+
+  .jonathan {
+    grid-column: 3/4;
+    grid-row: 1;
+  }
+
+  .kira {
+    grid-column: 4/5;
+    grid-row: 1/3;
+  }
+
+  .jeanette {
+    grid-column: 1/2;
+    grid-row: 2;
+  }
+
+  .patrick {
+    grid-row: 2;
+  }
+  
+}
