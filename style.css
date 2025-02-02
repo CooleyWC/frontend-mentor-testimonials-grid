@@ -106,15 +106,6 @@ textarea:not([rows]) {
     --fs-5: clamp(2.7994rem, 2.4462rem + 1.7658vw, 3.8147rem);
 }
 
-/* .main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0 auto;
-  padding: 0;
-} */
-
 .container {
     display: grid;
     grid-template-columns: 1fr;
